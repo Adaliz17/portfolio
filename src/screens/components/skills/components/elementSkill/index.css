@@ -1,0 +1,19 @@
+.skill-logo {
+    width: 2rem;
+}
+
+.skill-name {
+    font-weight: bold;
+}
+
+.skill-content {
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  }
+  
+  .skill-content:hover {
+    transform: scale(1.5);
+    background-color: white;
+    border-radius: 1rem;
+    padding: 1rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
