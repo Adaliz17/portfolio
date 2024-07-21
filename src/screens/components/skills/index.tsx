@@ -73,6 +73,20 @@ const MySkills = () => {
             percent={50}
             level={3}
           />
+          <ElementSkill
+            icon={images.git}
+            name="Git"
+            percent={60}
+            level={3}
+          />
+        </Col>
+        <Col lg={{ span: 6, offset: 3 }} className="d-flex justify-content-center align-items-end">
+          <ElementSkill
+            icon={images.postgreSQL}
+            name="PostgreSQL"
+            percent={60}
+            level={3}
+          />
         </Col>
       </Row>
     </>

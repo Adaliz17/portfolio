@@ -11,6 +11,8 @@ import react_native from './react-native.svg'
 import react from './react.svg'
 import typescript from './typescript.png'
 import vue from './vue.png'
+import git from './git.png'
+import postgreSQL from './postgresql.png'
 
 export const images = {
     angular,
@@ -25,5 +27,7 @@ export const images = {
     react_native,
     react,
     typescript,
-    vue
+    vue,
+    git,
+    postgreSQL
 }

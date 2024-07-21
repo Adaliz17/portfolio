@@ -28,7 +28,7 @@ const ElementSkill: React.FC<ElementSkillProps> = ({icon, name, percent, level})
         </div>
         <div className="text-center">
             <ProgressBar now={percent}/>
-            <span>Level: {levels[level]}</span>
+            <span>Nivel: {levels[level]}</span>
         </div>
     </Col>
   )
