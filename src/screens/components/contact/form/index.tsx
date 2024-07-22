@@ -1,27 +1,42 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useForm, SubmitHandler, Controller } from "react-hook-form";
 import { Input, Label, Col, Form, FormGroup, Row } from "reactstrap";
 
-interface IFormInput {
+export interface IFormInput {
   name: string;
   email: string;
   message: string;
 }
+interface ContactFormProps {
+  onSend: (params: IFormInput) => void;
+  valid: boolean | null;
+}
 
-const ContactForm: React.FC = () => {
+const ContactForm: React.FC<ContactFormProps> = ({ onSend, valid }) => {
   const {
     control,
     handleSubmit,
     watch,
     formState: { errors },
+    reset
   } = useForm<IFormInput>();
-  const onSubmit: SubmitHandler<IFormInput> = (data) => console.log(data);
+
+  const onSubmit: SubmitHandler<IFormInput> = (data) => {
+    onSend(data);
+  };
 
   const isFormValid =
     watch("name") && watch("email") && watch("message") && !errors.email;
 
+    useEffect(() => {
+      console.log("valid =====>>>", valid)
+      if (valid) {
+        reset();
+      }
+    }, [valid, reset]);
+
   return (
-    <Form onSubmit={handleSubmit(onSubmit)}>
+    <Form>
       <Row>
         <Col md={6}>
           <FormGroup>
@@ -89,9 +104,20 @@ const ContactForm: React.FC = () => {
           <span className="text-danger">Este cammpo es necesario</span>
         )}
       </FormGroup>
-      <button type="submit" disabled={!isFormValid} className="btn btn-primary m-auto w-100 mt-3">
+      <button
+        type="submit"
+        disabled={!isFormValid}
+        className="btn btn-primary m-auto w-100 mt-3"
+        onClick={handleSubmit(onSubmit)}
+      >
         Enviar
       </button>
+      {valid && <FormGroup className="mt-2 text-center">
+        <Label className="text-success">
+          Su mensaje ha sido enviado, lo estaré respondiendo a la mayor brevedad
+          posible 😉
+        </Label>
+      </FormGroup>}
     </Form>
   );
 };
