@@ -1,8 +1,22 @@
+.header-bg, .compact-header {
+  transition: background-color 0.3s ease, padding 0.3s ease, height 0.3s ease;
+}
+
 .header-bg {
-  background-color: #ebf2fa;
+  background-color: #F8F8F8;
 }
 
 .header-title {
   font-family: "Edu AU VIC WA NT Hand", cursive;
   font-optical-sizing: auto;
+}
+
+.compact-header {
+  background-color: #153243
+}
+
+.icon-styles {
+  color: #F8F8F8;
+  font-size: 2rem
+
 }
