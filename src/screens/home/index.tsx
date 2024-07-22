@@ -3,11 +3,12 @@ import { Col, Row } from 'react-bootstrap';
 import { CardProfile } from '../components/card';
 import MySkills from '../components/skills';
 import ContactMe from '../components/contact';
+import './index.css'
 
 const HomeScreen = () => {
 
   return (
-    <>
+    <div className='bg-portfolio'>
     <Header />
     <MySkills />
     <Row className='d-flex align-items-center'>
@@ -18,7 +19,7 @@ const HomeScreen = () => {
             <ContactMe />
         </Col>
     </Row>
-    </>
+    </div>
   );
 };
 

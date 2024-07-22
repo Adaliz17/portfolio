@@ -6,7 +6,7 @@ import { images } from "../../../assets/images/images";
 const MySkills = () => {
   return (
     <>
-      <div className="d-flex justify-content-center">
+      <div className="d-flex justify-content-center mt-5">
         <h1 className="skill-title">My Skills</h1>
       </div>
       <Row className="my-5">
