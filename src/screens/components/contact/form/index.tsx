@@ -29,7 +29,6 @@ const ContactForm: React.FC<ContactFormProps> = ({ onSend, valid }) => {
     watch("name") && watch("email") && watch("message") && !errors.email;
 
     useEffect(() => {
-      console.log("valid =====>>>", valid)
       if (valid) {
         reset();
       }

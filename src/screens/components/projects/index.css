@@ -1,0 +1,29 @@
+.container-project {
+  border-radius: 0.5rem;
+  background-color: #153243;
+}
+
+.icon-styles-project {
+  color: #153243;
+  font-size: 1.5rem;
+  background-color: #f8f8f8;
+  height: 2.5rem;
+  width: 2.5rem;
+  border-radius: 1.25rem;
+}
+
+.title-project {
+    color: #f8f8f8;
+}
+
+.carousel-img {
+    height: 25rem;
+    width: 24rem;
+    object-fit: contain;
+}
+
+.description-text {
+    font-size: 1rem;
+    color: #f8f8f8;
+    text-align: justify;
+}

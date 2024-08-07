@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Button, Col, Row } from "react-bootstrap";
+import { Button, Col, OverlayTrigger, Row, Tooltip } from "react-bootstrap";
 import "./index.css";
 
 export const Header = () => {
@@ -37,43 +37,65 @@ export const Header = () => {
             className="my-3 d-flex justify-content-center align-items-center"
           >
             <button className="btn mx-3">
-            <i className="fa-solid fa-user icon-styles"></i>
+              <OverlayTrigger
+                placement="bottom"
+                overlay={<Tooltip>Full Stack Developer</Tooltip>}
+              >
+                <i className="fa-solid fa-user icon-styles"></i>
+              </OverlayTrigger>
             </button>
             <button className="btn mx-3">
-              <i className="fa-solid fa-file-arrow-down icon-styles"></i>
+              <OverlayTrigger
+                placement="bottom"
+                overlay={<Tooltip>Download CV</Tooltip>}
+              >
+                <i className="fa-solid fa-file-arrow-down icon-styles"></i>
+              </OverlayTrigger>
             </button>
             <button className="btn mx-3" onClick={handleScrollToContact}>
-              <i className="fa-solid fa-paper-plane icon-styles"></i>
-            </button>
-            <div className="dropdown mx-3">
-              <button
-                className="btn dropdown-toggle"
-                type="button"
-                aria-expanded="false"
+              <OverlayTrigger
+                placement="bottom"
+                overlay={<Tooltip>Go to contact</Tooltip>}
               >
-                <i className="fa-solid fa-language icon-styles"></i>
-              </button>
-              <ul className="dropdown-menu">
-                <li>
-                  <a
-                    className="dropdown-item"
-                    href="#"
-                    onClick={() => toogleLanguage("Español")}
-                  >
-                    Español
-                  </a>
-                </li>
-                <li>
-                  <a
-                    className="dropdown-item"
-                    href="#"
-                    onClick={() => toogleLanguage("English")}
-                  >
-                    English
-                  </a>
-                </li>
-              </ul>
-            </div>
+                <i className="fa-solid fa-paper-plane icon-styles"></i>
+              </OverlayTrigger>
+            </button>
+
+            <OverlayTrigger
+              placement="right"
+              overlay={<Tooltip>Select your language</Tooltip>}
+            >
+              <div className="dropdown mx-3">
+                <button
+                  className="btn dropdown-toggle"
+                  type="button"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                >
+                  <i className="fa-solid fa-language icon-styles"></i>
+                </button>
+                <ul className="dropdown-menu">
+                  <li>
+                    <a
+                      className="dropdown-item"
+                      href="#"
+                      onClick={() => toogleLanguage("Español")}
+                    >
+                      Español
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      className="dropdown-item"
+                      href="#"
+                      onClick={() => toogleLanguage("English")}
+                    >
+                      English
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </OverlayTrigger>
           </Col>
         </Row>
       ) : (

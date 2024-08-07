@@ -14,6 +14,10 @@ import vue from './vue.png'
 import git from './git.png'
 import postgreSQL from './postgresql.png'
 
+import rifas1 from './rifas1.jpeg'
+import rifas2 from './rifas2.jpeg'
+import rifas3 from './rifas3.jpeg'
+
 export const images = {
     angular,
     bootstrap,
@@ -30,4 +34,10 @@ export const images = {
     vue,
     git,
     postgreSQL
+}
+
+export const projectImages = {
+    rifas1,
+    rifas2,
+    rifas3
 }
